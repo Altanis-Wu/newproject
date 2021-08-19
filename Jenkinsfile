@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Docker Build MySQL'){
             steps{
-                sh 'docker-compose -v up'
+                sh 'sudo docker-compose -v up'
             }
         }
     }

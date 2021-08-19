@@ -11,9 +11,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-        stage('Docker Build'){
+        stage('Docker Build MySQL'){
             steps{
-                sh 'docker-compose up'
+                sh "docker build -f Dockerfile-mysql -t mysqldb' ."
+                sh "docker run -d -p 3306:3306 --name mysqldb1 mysqldb"
             }
         }
     }

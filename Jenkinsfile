@@ -13,8 +13,7 @@ pipeline {
         }
         stage('Docker Build MySQL'){
             steps{
-                sh 'docker build -f Dockerfile-mysql -t mysqldb .'
-                sh 'docker run -d -p 3306:3306 --name mysqldb1 mysqldb'
+                sh 'docker-compose -v up'
             }
         }
     }

@@ -13,7 +13,10 @@ pipeline {
         }
         stage('Docker Build MySQL'){
             steps{
-                sh 'sudo docker-compose -v up'
+                sh 'docker-compose down'
+                sh 'docker build -f Dockerfile-mysql -t newproject/mysql .'
+                sh 'docker build -f Dockerfile-app -t newproject/app .'
+                sh 'docker-compose up -d'
             }
         }
     }

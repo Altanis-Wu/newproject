@@ -11,7 +11,7 @@ class ManagerTest {
     @Test
     void getEmployeeId() {
         Manager manager1 = new Manager(0, "Tom", "Yang");
-        Manager manager2 = new Manager(1, "Jerry", "Ye", new ArrayList<Fund>());
+        Manager manager2 = new Manager(1, "Jerry", "Ye", new ArrayList<>());
         assertEquals(0, manager1.getEmployeeId());
         assertEquals(1, manager2.getEmployeeId());
     }
@@ -26,7 +26,7 @@ class ManagerTest {
     @Test
     void getFirstName() {
         Manager manager1 = new Manager(0, "Tom", "Yang");
-        Manager manager2 = new Manager(1, "Jerry", "Ye", new ArrayList<Fund>());
+        Manager manager2 = new Manager(1, "Jerry", "Ye", new ArrayList<>());
         assertEquals(manager1.getFirstName(),"Tom");
         assertEquals(manager2.getFirstName(), "Jerry");
     }
@@ -41,7 +41,7 @@ class ManagerTest {
     @Test
     void getLastName() {
         Manager manager1=new Manager(0, "Tom", "Yang");
-        Manager manager2=new Manager(1, "Jerry", "Ye", new ArrayList<Fund>());
+        Manager manager2=new Manager(1, "Jerry", "Ye", new ArrayList<>());
         assertEquals(manager1.getLastName(), "Yang");
         assertEquals(manager2.getLastName(), "Ye");
     }
@@ -50,21 +50,21 @@ class ManagerTest {
     void setLastName() {
         Manager manager = new Manager();
         manager.setLastName("Ye");
-        assertTrue(manager.getLastName().equals("Ye"));
+        assertEquals(manager.getLastName(), "Ye");
     }
 
     @Test
     void getFunds() {
         Manager manager = new Manager();
-        Manager manager2=new Manager(1, "Jerry", "Ye", new ArrayList<Fund>());
-        assertTrue(manager.getFunds()==null);
+        Manager manager2=new Manager(1, "Jerry", "Ye", new ArrayList<>());
+        assertNull(manager.getFunds());
         assertEquals(0, manager2.getFunds().size());
     }
 
     @Test
     void setFunds() {
         Manager manager = new Manager();
-        manager.setFunds(new ArrayList<Fund>());
+        manager.setFunds(new ArrayList<>());
         assertEquals(0, manager.getFunds().size());
     }
 }

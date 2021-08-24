@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
                  sh 'mvn -DskipTests -Pprod clean package'
-                 sh 'mvn -Pprod test'
+                 sh 'mvn test'
                  stash(includes: 'target/*.jar', name: 'jar')
                  archiveArtifacts 'target/*.jar'
             }

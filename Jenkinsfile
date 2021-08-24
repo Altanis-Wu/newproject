@@ -13,16 +13,17 @@ pipeline {
                 archiveArtifacts 'target/*.jar'
             }
         }
-        stage('Test') {
+        post {
+            always {
+                junit 'target/surefire-reports/*.xml'
+            }
 
-            steps {
-                 sh 'mvn test'
-            }
-            post {
-                 always {
-                    junit 'target/surefire-reports/*.xml'
-                 }
-            }
+        }
+        steps {
+            sh 'mvn -DskipTests -Pprod clean package'
+            sh 'mvn -Pprod test'
+            stash(includes: 'target/*.jar', name: 'jar')
+            archiveArtifacts 'target/*.jar'
         }
         stage('Build the Image'){
             agent any

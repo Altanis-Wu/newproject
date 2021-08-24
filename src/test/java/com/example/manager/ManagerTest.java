@@ -1,6 +1,5 @@
 package com.example.manager;
 
-import com.example.fund.Fund;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

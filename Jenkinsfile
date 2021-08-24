@@ -13,6 +13,16 @@ pipeline {
                 archiveArtifacts 'target/*.jar'
             }
         }
+        stage('Test') {
+            steps {
+                 sh 'mvn test'
+            }
+            post {
+                 always {
+                    junit 'target/surefire-reports/*.xml'
+                 }
+            }
+        }
         stage('Build the Image'){
             agent any
             steps{

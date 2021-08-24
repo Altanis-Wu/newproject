@@ -1,29 +1,24 @@
 pipeline {
     agent none
     stages{
-        stage('Build'){
+        stage('Build and Test'){
             agent{
                 docker{
                     image 'maven:3.8.1-adoptopenjdk-11'
                 }
             }
-            steps {
-                sh 'mvn -DskipTests -Pprod clean package'
-                stash(includes: 'target/*.jar', name: 'jar')
-                archiveArtifacts 'target/*.jar'
-            }
-        }
-        post {
-            always {
-                junit 'target/surefire-reports/*.xml'
-            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
 
-        }
-        steps {
-            sh 'mvn -DskipTests -Pprod clean package'
-            sh 'mvn -Pprod test'
-            stash(includes: 'target/*.jar', name: 'jar')
-            archiveArtifacts 'target/*.jar'
+            }
+            steps {
+                 sh 'mvn -DskipTests -Pprod clean package'
+                 sh 'mvn -Pprod test'
+                 stash(includes: 'target/*.jar', name: 'jar')
+                 archiveArtifacts 'target/*.jar'
+            }
         }
         stage('Build the Image'){
             agent any

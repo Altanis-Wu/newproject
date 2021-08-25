@@ -67,7 +67,6 @@
                     <excludes>
                         <exclude>**/NewProjectApplicationTest.java</exclude>
                         <exclude>**/*ControllerTest.java</exclude>
-                        <exclude>**/*RepositoryTest.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>

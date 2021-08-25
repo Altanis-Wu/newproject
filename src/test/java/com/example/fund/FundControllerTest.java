@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(FundControllerTest.class)
+@WebMvcTest(FundController.class)
 class FundControllerTest {
     @MockBean
     FundRepository fundRepository;
@@ -36,7 +36,7 @@ class FundControllerTest {
     @Test
     void getFunds() throws Exception{
         when(fundService.getFunds()).thenReturn(defaultFund);
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/fund")).
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/security")).
                 andExpect(status().isOk());
     }
 

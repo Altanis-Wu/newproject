@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/security")
+@RequestMapping(path = "/api/v1/security")
 public class SecurityController {
     private final SecurityService securityService;
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/position")
+@RequestMapping("/api/v1/position")
 public class PositionController {
     private final PositionService positionService;
 

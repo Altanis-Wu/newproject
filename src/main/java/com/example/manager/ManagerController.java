@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/manager")
+@RequestMapping(path = "/api/v1/manager")
 public class ManagerController {
     private final ManagerService managerService;
 

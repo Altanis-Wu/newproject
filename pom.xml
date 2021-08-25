@@ -65,9 +65,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>**/NotweiboApplicationTests.java</exclude>
-                        <exclude>**/*ControllerTests.java</exclude>
-                        <exclude>**/*RepositoryTests.java</exclude>
+                        <exclude>**/NewProjectApplicationTest.java</exclude>
+                        <exclude>**/*ControllerTest.java</exclude>
+                        <exclude>**/*RepositoryTest.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>

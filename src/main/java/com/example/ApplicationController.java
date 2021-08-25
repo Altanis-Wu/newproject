@@ -1,9 +1,9 @@
 package com.example;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class ApplicationController {
     @RequestMapping("/")
     public String index(){

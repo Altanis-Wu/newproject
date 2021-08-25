@@ -49,10 +49,27 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/NotweiboApplicationTests.java</exclude>
+                        <exclude>**/*ControllerTests.java</exclude>
+                        <exclude>**/*RepositoryTests.java</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

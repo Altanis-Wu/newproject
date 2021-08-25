@@ -69,7 +69,7 @@ class FundControllerTest {
     void updateFund() throws Exception{
         String json = "{\"fundId\": 0, \"name\": Tech, " +
                 "\"manager\": {\"employeeId\": 1, \"firstName\": \"Larry\", " +
-                "+\"lastName\": \"Wu\", \"funds\": []}, \"positions\" : []}";
+                "\"lastName\": \"Wu\", \"funds\": []}, \"positions\" : []}";
         RequestBuilder request = MockMvcRequestBuilders.put("/api/v1/fund/0").
                 content(json).contentType(MediaType.APPLICATION_JSON);
         mockMvc.perform(request).andExpect(status().isOk());

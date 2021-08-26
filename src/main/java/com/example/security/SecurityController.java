@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1/security")
-@CrossOrigin
 public class SecurityController {
     private final SecurityService securityService;
 

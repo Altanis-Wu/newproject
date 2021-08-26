@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1/fund")
+@CrossOrigin
 public class FundController {
     private final FundService fundService;
 

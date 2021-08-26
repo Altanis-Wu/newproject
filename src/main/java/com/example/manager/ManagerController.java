@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1/manager")
+@CrossOrigin
 public class ManagerController {
     private final ManagerService managerService;
 
